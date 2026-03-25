@@ -19,12 +19,12 @@ public class Ruolo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ruo_id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "ruo_testo", nullable = false)
     private String testo;
 
     @OneToMany(mappedBy = "ruolo")
     private List<Utente> utenti;
-    
+
 }
