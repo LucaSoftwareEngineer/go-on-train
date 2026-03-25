@@ -2,6 +2,7 @@ node_modules/
 dist/
 tmp/
 out-compiled/
+target/
 
 .angular/
 .angular-cache/
@@ -21,6 +22,10 @@ yarn-error.log*
 
 .vscode/
 .idea/
+.mvn/
+*.iws
+*.iml
+*.ipr
 .DS_Store
 Thumbs.db
 
