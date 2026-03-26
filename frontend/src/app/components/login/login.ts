@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Auth } from '../../services/auth';
 import { LoginRequest } from '../../models/LoginRequest';
 import { ToastrService } from 'ngx-toastr';
+import SecureLS from 'secure-ls';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class Login {
 
   email = signal<string>('');
   password = signal<string>('');
+  ls = new SecureLS();
 
   private auth = inject(Auth);
   private toastr = inject(ToastrService);
@@ -48,6 +50,7 @@ export class Login {
           if (res.token.length > 0) {
             this.toastr.success('Accesso effettuato...', 'Successo!');
             this.router.navigate(['/dashboard']);
+            this.ls.set('token', res.token);
           } else {
             this.toastr.warning('Username o password errati', 'Attenzione!');
           }
