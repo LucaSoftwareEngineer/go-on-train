@@ -1,0 +1,79 @@
+<aside
+   id="logo-sidebar"
+   class="fixed top-0 left-0 z-40 w-64 h-screen pt-16 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0"
+   aria-label="Sidebar"
+   >
+   <div class="h-full px-0 pb-4 overflow-y-auto bg-white border-l-purple-600">
+      <ul class="space-y-2 font-medium">
+
+         <!-- Begin Pulsante Dashboard -->
+         <li>
+            <a
+               routerLink="/dashboard"
+               class="border-b-[#411E62] border-b-[1px] cursor-pointer flex items-center py-2 pl-[20px] text-[#411E62] hover:text-white hover:bg-[#411E62] group"
+               >
+            <img src="sidebar-icons/icons8-dashboard-94.png" class="w-5 h-5" alt="dashboard-icon" />
+            <span class="ms-3">Dashboard</span>
+            </a>
+         </li>
+         <!-- End Pulsante Dashboard -->
+
+         <!-- Begin Pulsante Elenco Corse -->
+         <li>
+            <a
+               routerLink="/corse"
+               class="border-b-[#411E62] border-b-[1px] cursor-pointer flex items-center py-2 pl-[20px] text-[#411E62] hover:text-white hover:bg-[#411E62] group"
+               >
+            <img src="sidebar-icons/icons8-pubblico-64.png" class="w-5 h-5" alt="dashboard-icon" />
+            <span class="ms-3">Elenco corse</span>
+            </a>
+         </li>
+         <!-- End Pulsante Elenco Corse -->
+
+         @if (ruoli().includes('AMMINISTRATORE')) {
+         
+         <!-- Begin Pulsante Registra Corsa -->
+         <li>
+            <a
+               routerLink="/corse/aggiungi"
+               class="border-b-[#411E62] border-b-[1px] cursor-pointer flex items-center py-2 pl-[20px] text-[#411E62] hover:text-white hover:bg-[#411E62] group"
+               >
+            <img src="sidebar-icons/icons8-autunno-64.png" class="w-5 h-5" alt="dashboard-icon" />
+            <span class="ms-3">Registra corsa</span>
+            </a>
+         </li>
+         <!-- End Pulsante Registra Corsa -->
+
+         <!-- Begin Pulsante Elenco Prenotazioni -->
+         <li>
+            <a
+               routerLink="/prenotazioni"
+               class="border-b-[#411E62] border-b-[1px] cursor-pointer flex items-center py-2 pl-[20px] text-[#411E62] hover:text-white hover:bg-[#411E62] group"
+               >
+            <img src="sidebar-icons/icons8-prenotazione-100.png" class="w-5 h-5" alt="dashboard-icon" />
+            <span class="ms-3">Elenco prenotazioni</span>
+            </a>
+         </li>
+         <!-- End Pulsante Elenco Prenotazioni -->
+
+         }
+
+         @if (ruoli().includes('UTENTE')) {
+
+         <!-- Begin Pulsante Le Tue Prenotazioni -->
+         <li>
+            <a
+               routerLink="/prenotazioni"
+               class="border-b-[#411E62] border-b-[1px] cursor-pointer flex items-center py-2 pl-[20px] text-[#411E62] hover:text-white hover:bg-[#411E62] group"
+               >
+            <img src="sidebar-icons/icons8-prenotazione-100.png" class="w-5 h-5" alt="dashboard-icon" />
+            <span class="ms-3">Le tue prenotazioni</span>
+            </a>
+         </li>
+         <!-- End Pulsante Le Tue Prenotazioni -->
+
+         }
+      </ul>
+      <div class="md:mt-[35vh] p-[25px] text-center text-gray-500 mt-[40vh]"><i>Powered By LucaSoftwareEngineer</i></div>
+   </div>
+</aside>
