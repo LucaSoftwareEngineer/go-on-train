@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Auth } from '../../services/auth';
@@ -19,6 +19,7 @@ export class Login {
 
   private auth = inject(Auth);
   private toastr = inject(ToastrService);
+  private router = inject(Router);
 
   loginHandler() {
 
@@ -46,6 +47,7 @@ export class Login {
           console.log(res.token)
           if (res.token.length > 0) {
             this.toastr.success('Accesso effettuato...', 'Successo!');
+            this.router.navigate(['/dashboard']);
           } else {
             this.toastr.warning('Username o password errati', 'Attenzione!');
           }
