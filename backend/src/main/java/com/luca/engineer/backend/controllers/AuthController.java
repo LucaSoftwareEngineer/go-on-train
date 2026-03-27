@@ -11,6 +11,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/")
@@ -29,7 +32,9 @@ public class AuthController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String token = jwtUtil.generateToken(request.getEmail());
 
-        return ResponseEntity.ok(new LoginResponse(token));
+        String ruolo = authentication.getAuthorities().iterator().next().getAuthority();
+
+        return ResponseEntity.ok(new LoginResponse(token, ruolo));
     }
 
 }
