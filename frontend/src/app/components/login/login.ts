@@ -49,6 +49,7 @@ export class Login {
           console.log(res.token)
           if (res.token.length > 0) {
             this.ls.set('token', res.token);
+            this.ls.set('ruolo', res.ruolo)
             this.toastr.success('Accesso effettuato...', 'Successo!');
 
             setTimeout(() => {

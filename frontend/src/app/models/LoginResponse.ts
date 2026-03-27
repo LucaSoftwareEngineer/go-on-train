@@ -1,3 +1,4 @@
 export type LoginResponse = {
-    token: string
+    token: string,
+    ruolo: string
 }

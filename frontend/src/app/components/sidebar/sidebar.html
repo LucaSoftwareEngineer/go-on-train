@@ -30,7 +30,7 @@
          </li>
          <!-- End Pulsante Elenco Corse -->
 
-         @if (ruoli().includes('AMMINISTRATORE')) {
+         @if (ruoli().includes('ROLE_AMMINISTRATORE')) {
          
          <!-- Begin Pulsante Registra Corsa -->
          <li>
@@ -58,7 +58,7 @@
 
          }
 
-         @if (ruoli().includes('UTENTE')) {
+         @if (ruoli().includes('ROLE_UTENTE')) {
 
          <!-- Begin Pulsante Le Tue Prenotazioni -->
          <li>

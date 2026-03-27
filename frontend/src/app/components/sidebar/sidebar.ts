@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import SecureLS from 'secure-ls';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,10 +11,11 @@ import { RouterLink } from '@angular/router';
 export class Sidebar {
 
   ruoli = signal<Array<string>>([]);
+  ls = new SecureLS();
   
   constructor() {
 
-    this.ruoli.set(["AMMINISTRATORE", "UTENTE"]);
+    this.ruoli.set([this.ls.get('ruolo')]);
 
   }
 
