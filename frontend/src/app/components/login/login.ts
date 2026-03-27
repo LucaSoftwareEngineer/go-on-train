@@ -48,9 +48,13 @@ export class Login {
         (res) => {
           console.log(res.token)
           if (res.token.length > 0) {
-            this.toastr.success('Accesso effettuato...', 'Successo!');
-            this.router.navigate(['/dashboard']);
             this.ls.set('token', res.token);
+            this.toastr.success('Accesso effettuato...', 'Successo!');
+
+            setTimeout(() => {
+              this.router.navigate(['/dashboard']);
+            }, 2000);
+            
           } else {
             this.toastr.warning('Username o password errati', 'Attenzione!');
           }
