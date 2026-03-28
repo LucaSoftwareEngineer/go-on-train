@@ -12,3 +12,4 @@
 | Utente: Login | 🔄 In corso |
 | Utente: Visualizzazione corsa con opzione prenota e annulla | ⏳ Da fare |
 | Utente: Visualizzazione dettagliata della prenotazione effettuata | ⏳ Da fare |
+| Utente: Recupero Password | ✅ Completato |
