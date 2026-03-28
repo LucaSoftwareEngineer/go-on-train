@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -13,11 +13,18 @@ import SecureLS from 'secure-ls';
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
-export class Login {
+export class Login implements OnInit {
+
+  ngOnInit(): void {
+    if (this.ls.get('email').length > 0) {
+      this.email.set(this.ls.get('email'));
+    }
+  }
 
   email = signal<string>('');
   password = signal<string>('');
   ls = new SecureLS();
+  salvaCredenziali = signal(false);
 
   private auth = inject(Auth);
   private toastr = inject(ToastrService);
@@ -49,7 +56,12 @@ export class Login {
           console.log(res.token)
           if (res.token.length > 0) {
             this.ls.set('token', res.token);
-            this.ls.set('ruolo', res.ruolo)
+            this.ls.set('ruolo', res.ruolo);
+
+            if(this.salvaCredenziali()) {
+              this.ls.set('email', this.email());
+            }
+
             this.toastr.success('Accesso effettuato...', 'Successo!');
 
             setTimeout(() => {
@@ -67,6 +79,10 @@ export class Login {
     } else {
       this.toastr.warning(strAvvisi, 'Attenzione!', {enableHtml: true});
     }
+  }
+
+  salvaCredenzialiHandler() {
+    this.salvaCredenziali.update(s => !s);
   }
 
 }
