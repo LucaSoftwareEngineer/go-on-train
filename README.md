@@ -4,7 +4,7 @@
 ## Feature Da fare / In corso / Completate
 | Feature | Stato |
 | :--- | :--- |
-| Amministratore: Login | 🔄 In corso |
+| Amministratore: Login | ✅ Completato |
 | Amministratore: Registrazione corsa | ⏳ Da fare |
 | Amministratore: Visualizzazione corsa con opzioni modifica e elimina | ⏳ Da fare |
 | Amministratore: Visualizzazione delle prenotazioni effettuate dagli utenti | ⏳ Da fare |
