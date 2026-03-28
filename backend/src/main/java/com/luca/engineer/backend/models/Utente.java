@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -48,5 +49,11 @@ public class Utente {
 
     @OneToMany(mappedBy = "utente")
     private List<Prenotazione> prenotazioni;
+
+    @Column(name="opt_reset_password")
+    private String optResetPassword;
+
+    @Column(name="opt_expiration")
+    private LocalDateTime optExpiration;
 
 }

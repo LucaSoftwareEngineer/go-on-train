@@ -5,6 +5,8 @@ import { Corse } from './components/corse/corse';
 import { CorseAggiungi } from './components/corse-aggiungi/corse-aggiungi';
 import { Prenotazioni } from './components/prenotazioni/prenotazioni';
 import { Register } from './components/register/register';
+import { PasswordReset } from './components/password-reset/password-reset';
+import { PasswordUpdate } from './components/password-update/password-update';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -13,5 +15,7 @@ export const routes: Routes = [
     { path: 'dashboard', component: Dashboard },
     { path: 'corse', component: Corse },
     { path: 'corse/aggiungi', component: CorseAggiungi },
-    { path: 'prenotazioni', component: Prenotazioni }
+    { path: 'prenotazioni', component: Prenotazioni },
+    { path: 'password/reset', component: PasswordReset },
+    { path: 'password/update', component: PasswordUpdate }
 ];

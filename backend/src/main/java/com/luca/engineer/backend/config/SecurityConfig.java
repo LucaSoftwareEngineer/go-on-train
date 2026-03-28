@@ -33,6 +33,8 @@ public class SecurityConfig {
                         auth -> auth
                                 .requestMatchers("/api/auth/login").permitAll()
                                 .requestMatchers("/api/user/register").permitAll()
+                                .requestMatchers("/api/password/reset").permitAll()
+                                .requestMatchers("/api/password/update").permitAll()
                                 .requestMatchers("/api/corsa/add").authenticated()
                                 .requestMatchers("/api/corsa/get/**").authenticated()
                                 .requestMatchers("/api/corsa/edit/**").authenticated()
