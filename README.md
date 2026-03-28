@@ -9,7 +9,7 @@
 | Amministratore: Visualizzazione corsa con opzioni modifica e elimina | ⏳ Da fare |
 | Amministratore: Visualizzazione delle prenotazioni effettuate dagli utenti | ⏳ Da fare |
 | Utente: Registrazione | ✅ Completato |
-| Utente: Login | 🔄 In corso |
+| Utente: Login | ✅ Completato |
 | Utente: Visualizzazione corsa con opzione prenota e annulla | ⏳ Da fare |
 | Utente: Visualizzazione dettagliata della prenotazione effettuata | ⏳ Da fare |
 | Utente: Recupero Password | ✅ Completato |
