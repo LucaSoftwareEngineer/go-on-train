@@ -1,12 +1,16 @@
 package com.luca.engineer.backend.services;
 
 import com.luca.engineer.backend.config.JwtUtil;
+import com.luca.engineer.backend.dto.RegisterRequest;
+import com.luca.engineer.backend.dto.RegisterResponse;
 import com.luca.engineer.backend.models.Utente;
 import com.luca.engineer.backend.repositories.UtenteRepository;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
