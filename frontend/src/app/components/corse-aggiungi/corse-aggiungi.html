@@ -1,20 +1,99 @@
 <app-navbar></app-navbar>
 <app-sidebar></app-sidebar>
 
-<div class="p-4 sm:ml-64">
-<div class="md:mt-[50px] mt-[60px]">
-   <div class="w-[100%] bg-white border border-gray-200 rounded-lg shadow-sm">
-      <div class="bg-[#411E62] p-3 rounded-t-lg">
-         <a class="cursor-pointer">
+<div>
+  <div class="p-4 sm:ml-64">
+    <div class="mt-[60px] md:mt-[50px]">
+      <div class="w-full rounded-lg border border-gray-200 bg-white shadow-sm">
+        <div class="rounded-t-lg bg-[#411E62] p-3">
+          <a class="cursor-pointer">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
-               Registra Corsa
+              Registra Corsa
             </h5>
-         </a>
+          </a>
+        </div>
+        <form
+            #registraCorsaForm="ngForm"
+            class="space-y-4 md:space-y-6"
+            (submit)="registraCorsaHandler()"
+            >
+            <div class="p-5">
+               <p class="mb-0 font-normal text-gray-700">
+                  Attraverso questo servizio puoi registrare una nuova corsa.
+               </p>
+               <br />
+               <div>
+                  <p class="mb-5 font-normal text-gray-700">
+                     <label class="text-[12px] ml-1">Data di partenza:</label>
+                     <input
+                        name="partenzaData"
+                        id="partenzaData"
+                        [(ngModel)]="partenzaData"
+                        class="bg-neutral-secondary-medium border-default-medium text-heading rounded-base focus:ring-brand focus:border-brand placeholder:text-body block w-full border border-gray-200 px-3 py-2.5 text-sm shadow-xs md:w-[300px]"
+                        type="date"
+                     />
+                  </p>
+                  <p class="mb-5 font-normal text-gray-700">
+                     <label class="text-[12px] ml-1">Ora di partenza:</label>
+                     <input
+                        name="partenzaOra"
+                        id="partenzaOra"
+                        [(ngModel)]="partenzaOra"
+                        class="bg-neutral-secondary-medium border-default-medium text-heading rounded-base focus:ring-brand focus:border-brand placeholder:text-body block w-full border border-gray-200 px-3 py-2.5 text-sm shadow-xs md:w-[300px]"
+                        type="time"
+                     />
+                  </p>
+                  <p class="mb-5 font-normal text-gray-700">
+                     <label class="text-[12px] ml-1">Luogo di partenza:</label>
+                     <input
+                        name="partenzaLuogo"
+                        id="partenzaLuogo"
+                        [(ngModel)]="partenzaLuogo"
+                        class="bg-neutral-secondary-medium border-default-medium text-heading rounded-base focus:ring-brand focus:border-brand placeholder:text-body block w-full border border-gray-200 px-3 py-2.5 text-sm shadow-xs md:w-[300px]"
+                        type="text"
+                        placeholder="Inserisci luogo di partenza..."
+                     />
+                  </p>
+                  <p class="mb-5 font-normal text-gray-700">
+                     <label class="text-[12px] ml-1">Data di arrivo:</label>
+                     <input
+                        name="arrivoData"
+                        id="arrivoData"
+                        [(ngModel)]="arrivoData"
+                        class="bg-neutral-secondary-medium border-default-medium text-heading rounded-base focus:ring-brand focus:border-brand placeholder:text-body block w-full border border-gray-200 px-3 py-2.5 text-sm shadow-xs md:w-[300px]"
+                        type="date"
+                     />
+                  </p>
+                  <p class="mb-5 font-normal text-gray-700">
+                     <label class="text-[12px] ml-1">Ora di arrivo:</label>
+                     <input
+                        name="arrivoOra"
+                        id="arrivoOra"
+                        [(ngModel)]="arrivoOra"
+                        class="bg-neutral-secondary-medium border-default-medium text-heading rounded-base focus:ring-brand focus:border-brand placeholder:text-body block w-full border border-gray-200 px-3 py-2.5 text-sm shadow-xs md:w-[300px]"
+                        type="time"
+                     />
+                  </p>
+                  <p class="mb-5 font-normal text-gray-700">
+                     <label class="text-[12px] ml-1">Luogo di arrivo:</label>
+                     <input
+                        name="arrivoLuogo"
+                        id="arrivoLuogo"
+                        [(ngModel)]="arrivoLuogo"
+                        class="bg-neutral-secondary-medium border-default-medium text-heading rounded-base focus:ring-brand focus:border-brand placeholder:text-body block w-full border border-gray-200 px-3 py-2.5 text-sm shadow-xs md:w-[300px]"
+                        type="text"
+                        placeholder="Inserisci luogo di arrivo..."
+                     />
+                  </p>
+                  <p class="mb-5 font-normal text-gray-700">
+                  <button class="me-2 mb-2 w-full cursor-pointer rounded-lg bg-[#411E62] px-5 py-2.5 text-sm font-medium text-white hover:bg-black focus:ring-4 focus:ring-blue-300 focus:outline-none md:w-[300px]">
+                     Registra corsa
+                  </button>
+                  </p>
+               </div>
+            </div>
+         </form>
       </div>
-      <div class="p-5">
-         <p class="mb-3 font-normal text-gray-700">
-            In questa pagina puoi aggiungere una nuova corsa.
-         </p>
-      </div>
-   </div>
+    </div>
+  </div>
 </div>

@@ -48,5 +48,12 @@ public class JwtUtil {
                 .getExpiration()
                 .before(new Date());
     }
+
+    public String rimuoviBearer(String token) {
+        if (token != null && token.startsWith("Bearer ")) {
+            token = token.substring(7); // Rimuove "Bearer "
+        }
+        return token;
+    }
 }
 
