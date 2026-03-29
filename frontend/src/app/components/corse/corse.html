@@ -1,6 +1,5 @@
 <app-navbar></app-navbar>
 <app-sidebar></app-sidebar>
-
 <div class="p-4 sm:ml-64">
 <div class="md:mt-[50px] mt-[60px]">
    <div class="w-[100%] bg-white border border-gray-200 rounded-lg shadow-sm">
@@ -15,6 +14,52 @@
          <p class="mb-3 font-normal text-gray-700">
             In questa pagina puoi visualizzare tutte le corse disponibili.
          </p>
+
+         <input
+              type="text"
+              class="md:w-[30%] w-[100%] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#411E62] focus:border-[#411E62] block w-full p-2.5"
+              placeholder="Cerca destinazione..." 
+              [(ngModel)]="destinazione"
+              />
+
+         <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-[20px]">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+               <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                     <th scope="col" class="px-6 py-3">
+                        Data partenza
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                        Ora partenza
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                        Partenza
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                        Data arrivo
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                        Ora arrivo
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                        Destinazione
+                     </th>
+                  </tr>
+               </thead>
+               <tbody>
+                  @for (corsa of elencoCorse() | filtroCorse : destinazione; track corsa.id) {
+                    <tr>
+                     <td scope="col" class="px-6 py-3">{{corsa.partenzaData}}</td>
+                     <td scope="col" class="px-6 py-3">{{corsa.partenzaOra}}</td>
+                     <td scope="col" class="px-6 py-3">{{corsa.partenzaLuogo}}</td>
+                     <td scope="col" class="px-6 py-3">{{corsa.arrivoData}}</td>
+                     <td scope="col" class="px-6 py-3">{{corsa.arrivoOra}}</td>
+                     <td scope="col" class="px-6 py-3">{{corsa.arrivoLuogo}}</td>
+                    </tr>
+                  }
+               </tbody>
+            </table>
+         </div>
       </div>
    </div>
 </div>

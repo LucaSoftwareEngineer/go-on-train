@@ -1,6 +1,7 @@
 package com.luca.engineer.backend.services;
 
 import com.luca.engineer.backend.config.JwtUtil;
+import com.luca.engineer.backend.dto.CorsaResponse;
 import com.luca.engineer.backend.dto.RegistraCorsaRequest;
 import com.luca.engineer.backend.dto.RegistraCorsaResponse;
 import com.luca.engineer.backend.exceptions.UserNotFound;
@@ -12,6 +13,10 @@ import com.luca.engineer.backend.repositories.UtenteRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -42,6 +47,19 @@ public class CorsaService {
 
         return modelMapper.map(corsa, RegistraCorsaResponse.class);
 
+    }
+
+    public List<CorsaResponse> getElencoCorse() {
+        List<Corsa> corse = corsaRepository.findAll();
+        Iterator<Corsa> iterator = corse.listIterator();
+
+        List<CorsaResponse> response = new ArrayList<>();
+
+        while(iterator.hasNext()) {
+            response.add(modelMapper.map(iterator.next(), CorsaResponse.class));
+        }
+
+        return response;
     }
 
 }
